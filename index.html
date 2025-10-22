@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christofer Bertonha // Senior Software Engineer</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load IBM Plex Mono font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #0d0d0d; /* Near black */
+            color: #00ff00; /* Bright green */
+        }
+
+        /* Custom accent color */
+        :root {
+            --accent-color: #00ffff; /* Cyan */
+        }
+
+        /* Style for the active nav link */
+        .nav-link.active {
+            color: var(--accent-color);
+            background-color: #222;
+        }
+
+        /* Simple glow effect for hero name */
+        .hero-name {
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow */
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00dddd;
+        }
+
+        /* Blinking cursor animation */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .blinking-cursor {
+            animation: blink 1s step-end infinite;
+            font-weight: bold;
+            color: #00FF00; /* green cursor */
+        }
+
+        /* Force sharp corners on buttons/inputs */
+        input, button {
+            border-radius: 0 !important;
+        }
+
+        /* Custom list style for experience */
+        .exp-list {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+        .exp-list li {
+            position: relative;
+        }
+        .exp-list li::before {
+            content: '•';
+            position: absolute;
+            left: -1.25rem;
+            top: 0;
+            color: #00ffff; /* Cyan bullet */
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body class="antialiased text-green-400">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 w-full border-b border-green-500/50 bg-black/90">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+            <a href="#" class="text-xl font-bold text-white transition-colors hover:text-cyan-400">
+                Christofer_Bertonha.sh
+            </a>
+            <div class="hidden space-x-2 md:block">
+                <a href="#about" class="nav-link px-3 py-1 text-green-300 transition-colors hover:bg-gray-800 hover:text-cyan-400">About</a>
+                <a href="#experience" class="nav-link px-3 py-1 text-green-300 transition-colors hover:bg-gray-800 hover:text-cyan-400">Experience</a>
+                <a href="#skills" class="nav-link px-3 py-1 text-green-300 transition-colors hover:bg-gray-800 hover:text-cyan-400">Skills</a>
+                <a href="#languages" class="nav-link px-3 py-1 text-green-300 transition-colors hover:bg-gray-800 hover:text-cyan-400">Languages</a>
+                <a href="#contact" class="nav-link border border-cyan-500 bg-cyan-500 px-4 py-2 text-black transition-colors hover:bg-cyan-600">Contact</a>
+            </div>
+            <!-- Mobile nav (placeholder, simple links for single page) -->
+            <div class="space-x-4 md:hidden">
+                 <a href="#contact" class="border border-cyan-500 bg-cyan-500 px-3 py-2 text-sm text-black transition-colors hover:bg-cyan-600">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="home" class="flex min-h-[calc(100vh-65px)] items-center">
+            <div class="py-16 text-center md:text-left">
+                <span class="text-lg font-medium text-cyan-400">~$ greet.sh</span>
+                <h1 class="hero-name mt-2 text-5xl font-extrabold text-white sm:text-6xl lg:text-7xl">
+                    Christofer Bertonha<span class="blinking-cursor">_</span>
+                </h1>
+                <h2 class="mt-4 text-3xl font-semibold text-green-300 sm:text-4xl">
+                    Senior Software Engineer
+                </h2>
+                <p class="mt-6 max-w-2xl text-lg text-green-500 md:text-xl">
+                    Mission-driven backend developer with 10+ years of experience building scalable systems. Proficient in Python, Go, and Rust, with strong skills in cloud platforms, microservices, and API development.
+                </p>
+                <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row md:justify-start">
+                    <a href="#contact" class="w-full border border-cyan-500 bg-cyan-500 px-8 py-3 text-lg font-medium text-black transition-colors hover:bg-cyan-600 sm:w-auto">
+                        Get in Touch
+                    </a>
+                    <a href="https://www.linkedin.com/in/christofer-bertonha" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-2 border-2 border-green-500 px-8 py-3 text-lg font-medium text-green-400 transition-colors hover:bg-green-500 hover:text-black sm:w-auto">
+                        <!-- LinkedIn SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width_4 height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/bertonha" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-2 border-2 border-green-500 px-8 py-3 text-lg font-medium text-green-400 transition-colors hover:bg-green-500 hover:text-black sm:w-auto">
+                        <!-- GitHub SVG Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 lg:py-28">
+            <h3 class="mb-4 text-3xl font-bold text-white sm:text-4xl">> Professional Experience</h3>
+            <div class="h-1 w-24 bg-cyan-400"></div>
+            
+            <div class="relative mt-12">
+                <!-- Vertical timeline bar -->
+                <div class="absolute left-4 top-0 h-full w-1 border-l-2 border-dashed border-green-500/50 md:left-1/2 md:-ml-[1px]"></div>
+
+                <!-- Timeline Item: Preply -->
+                <div class="relative mb-12">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Left side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pr-10 md:text-right">
+                            <p class="text-lg font-medium text-cyan-400">[ July 2023 - Present ]</p>
+                            <p class="text-green-600">Barcelona, Spain</p>
+                        </div>
+                        <!-- Right side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pl-10">
+                            <h4 class="text-xl font-bold text-white">Senior Backend Engineer</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">Preply</p>
+                            <ul class="exp-list space-y-2 text-green-400">
+                                <li>Contributing to the development and enhancement of Preply's web-based platform.</li>
+                                <li>Collaborating with cross-functional teams to implement new features and optimize performance.</li>
+                                <li>Maintaining platform stability, security, and scalability.</li>
+                                <li>Innovating and improving the technology stack.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap justify-start gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Python</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">AWS</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">GraphQL</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Django</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Kubernetes</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">LLM</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">A/B testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item: Typeform -->
+                <div class="relative mb-12">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col-reverse md:flex-row">
+                        <!-- Left side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pr-10 md:text-right">
+                            <h4 class="text-xl font-bold text-white">Senior Backend Engineer</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">Typeform (VideoAsk)</p>
+                            <p class="mb-4 text-green-400">
+                                As the lead backend developer, I was responsible for improving the scalability and reliability of the application. I containerized and migrated the application to AWS using Kubernetes, which resulted in improved deployment times.
+                            </p>
+                            <ul class="exp-list space-y-2 text-green-400">
+                                <li>Migrated the database from MySQL 5.7 to PostgreSQL 14, which led to better scalability and higher efficiency.</li>
+                                <li>Split the monolithic application into a few micro-services to improve the application's modularity.</li>
+                                <li>Added new features and ensured seamless integration.</li>
+                                <li>Provided mentorship and guidance to junior developers, helping them overcome challenges and learn new technologies.</li>
+                                <li>Actively participated in the hiring processes for over 20 developers, including conducting interviews and evaluating technical skills.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap justify-end gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Python</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Django</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">REST API</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Postgres</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Redis</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">AWS</span>
+                            </div>
+                        </div>
+                        <!-- Right side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pl-10">
+                            <p class="text-lg font-medium text-cyan-400">[ Nov 2019 - Jan 2023 ]</p>
+                            <p class="text-green-600">Barcelona, Spain</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item: Chartboost -->
+                <div class="relative mb-12">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Left side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pr-10 md:text-right">
+                            <p class="text-lg font-medium text-cyan-400">[ Jan 2019 - Nov 2019 ]</p>
+                            <p class="text-green-600">Barcelona, Spain</p>
+                        </div>
+                        <!-- Right side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pl-10">
+                            <h4 class="text-xl font-bold text-white">Senior Fullstack Engineer</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">Chartboost</p>
+                            <p class="text-green-400">
+                                Designed and developed a user-friendly dashboard that enables users to easily add game ads and customize their payment options based on specific characteristics such as location and device type.
+                            </p>
+                            <div class="mt-4 flex flex-wrap justify-start gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Python</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Flask</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">React</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">JS</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item: SendCloud -->
+                <div class="relative mb-12">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col-reverse md:flex-row">
+                        <!-- Left side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pr-10 md:text-right">
+                            <h4 class="text-xl font-bold text-white">Senior Fullstack Engineer</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">SendCloud</p>
+                            <ul class="exp-list space-y-2 text-green-400">
+                                <li>Developed a user-friendly rule engine that automated system actions based on generic triggers.</li>
+                                <li>Developed plugins for webshops that enable customers to select their preferred delivery location on a map.</li>
+                                <li>Developed an importer mechanism to efficiently import orders from the webshop.</li>
+                                <li>Optimized the performance of PostgreSQL databases.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap justify-end gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Python</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Django</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Vue.js</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Celery</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Docker</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">AWS</span>
+                            </div>
+                        </div>
+                        <!-- Right side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pl-10">
+                            <p class="text-lg font-medium text-cyan-400">[ Sep 2015 - Jan 2019 ]</p>
+                            <p class="text-green-600">Eindhoven, Netherlands</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item: Titans Group -->
+                <div class="relative mb-12">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Left side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pr-10 md:text-right">
+                            <p class="text-lg font-medium text-cyan-400">[ Oct 2013 - Aug 2015 ]</p>
+                            <p class="text-green-600">São Paulo, Brazil</p>
+                        </div>
+                        <!-- Right side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pl-10">
+                            <h4 class="text-xl font-bold text-white">Python Developer</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">Titans Group</p>
+                            <ul class="exp-list space-y-2 text-green-400">
+                                <li>Designed and implemented scalable backend solutions for a white-label cloud storage service serving 14 million users.</li>
+                                <li>Contributed to the development of the main API for file synchronization, improving performance and reliability.</li>
+                                <li>Contributed to the development of the user management & sales APIs.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap justify-start gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Python</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Django</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Flask</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Celery</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">REST API</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">AWS</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item: Amdocs -->
+                <div class="relative">
+                    <div class="absolute left-4 top-3 h-4 w-4 -translate-x-1/2 border-4 border-black bg-cyan-400 md:left-1/2"></div>
+                    <div class="flex flex-col-reverse md:flex-row">
+                        <!-- Left side (Content) -->
+                        <div class="border border-green-500/50 bg-black/30 p-6 md:w-1/2 md:pr-10 md:text-right">
+                            <h4 class="text-xl font-bold text-white">Systems Analyst</h4>
+                            <p class="mb-3 text-lg font-medium text-green-300">Amdocs</p>
+                            <p class="text-green-400">
+                                Responsible for enhancing and maintaining the billing and revenue system for Brazilian telecommunications companies (Claro, Tim), managing their billing and revenue processes more efficiently.
+                            </p>
+                            <div class="mt-4 flex flex-wrap justify-end gap-2">
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Java</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">EJB</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">JSP</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">XML</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">C</span>
+                                <span class="border border-green-700 bg-gray-800 px-3 py-1 text-sm text-green-300">Oracle</span>
+                                <span class="border border-green-7We00 bg-gray-800 px-3 py-1 text-sm text-green-300">Unix</span>
+                            </div>
+                        </div>
+                        <!-- Right side (Date) -->
+                        <div class="mb-2 md:mb-0 md:w-1/2 md:pl-10">
+                            <p class="text-lg font-medium text-cyan-400">[ June 2012 - Oct 2013 ]</p>
+                            <p class="text-green-600">São Carlos, Brazil</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 lg:py-28">
+            <h3 class="mb-4 text-3xl font-bold text-white sm:text-4xl">> Technical Skills</h3>
+            <div class="h-1 w-24 bg-cyan-400"></div>
+            
+            <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                
+                <!-- Card 1: Languages -->
+                <div class="border border-green-500/50 bg-black/30 p-6">
+                    <h4 class="mb-4 text-xl font-bold text-white">Languages/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Python</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Go</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Rust</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> C/C++</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> JS/TS</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Frameworks -->
+                <div class="border border-green-500/50 bg-black/30 p-6">
+                    <h4 class="mb-4 text-xl font-bold text-white">Frameworks/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Django</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Flask</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> FastAPI</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Celery</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> React</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Vue.js</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Platform -->
+                <div class="border border-green-500/50 bg-black/30 p-6">
+                    <h4 class="mb-4 text-xl font-bold text-white">Platform/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Containers</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Kubernetes</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> CI/CD</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> AWS</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Google Cloud</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Terraform</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Databases -->
+                <div class="border border-green-500/50 bg-black/30 p-6">
+                    <h4 class="mb-4 text-xl font-bold text-white">Databases/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> PostgreSQL</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> MySQL</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> MongoDB</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Redis</li>
+                    </ul>
+                </div>
+                
+                <!-- Card 5: Scalability & Reliability -->
+                <div class="border border-green-500/50 bg-black/30 p-6 md:col-span-2 lg:col-span-1">
+                    <h4 class="mb-4 text-xl font-bold text-white">Scalability_&_Reliability/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Event-Driven Systems (PubSub)</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Queue-Driven Systems (AMQP, Redis)</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Service-Driven Architecture</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Asynchronism</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Other -->
+                <div class="border border-green-500/50 bg-black/30 p-6">
+                    <h4 class="mb-4 text-xl font-bold text-white">Other/</h4>
+                    <ul class="space-y-2 text-green-400">
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Git</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Geolocation (PostGIS, Leaflet)</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Chart Drawing Tools</li>
+                        <li class="flex items-center gap-2"><span class="text-cyan-400">+</span> Linux</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages & Education (Combined Section) -->
+        <section class="grid grid-cols-1 gap-16 py-20 lg:grid-cols-2 lg:py-28">
+            
+            <!-- Languages -->
+            <div id="languages">
+                <h3 class="mb-4 text-3xl font-bold text-white sm:text-4xl">> Languages</h3>
+                <div class="h-1 w-24 bg-cyan-400"></div>
+                <div class="mt-10 space-y-4">
+                    <div class="text-lg">
+                        <span class="font-bold text-white">Portuguese:</span>
+                        <span class="text-green-300">Native</span>
+                    </div>
+                    <div class="text-lg">
+                        <span class="font-bold text-white">English:</span>
+                        <span class="text-green-300">Fluent</span>
+                    </div>
+                    <div class="text-lg">
+                        <span class="font-bold text-white">Spanish:</span>
+                        <span class="text-green-300">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div id="education">
+                <h3 class="mb-4 text-3xl font-bold text-white sm:text-4xl">> Education</h3>
+                <div class="h-1 w-24 bg-cyan-400"></div>
+                <div class="mt-10 space-y-8">
+                    <!-- Master -->
+                    <div>
+                        <p class="text-lg font-medium text-cyan-400">2012 (Unfinished)</p>
+                        <h4 class="text-xl font-bold text-white">Master's, Computer Graphics</h4>
+                        <p class="text-lg text-green-300">USP-São Carlos, Brazil</p>
+                    </div>
+                    <!-- Bachelor -->
+                    <div>
+                        <p class="text-lg font-medium text-cyan-400">2007 - 2011</p>
+                        <h4 class="text-xl font-bold text-white">Bachelor's degree, Computer Engineering</h4>
+                        <p class="text-lg text-green-300">Centro Universitário Central Paulista</p>
+                        <p class="mt-2 text-green-500">Award: Honor Of The Best Computer Engineer Student</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="border-t border-green-500/50 bg-black">
+        <div class="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-white">> Get in Touch</h3>
+            <p class="mt-4 text-lg text-green-500">
+                I'm always open to discussing new projects, creative ideas, or opportunities.
+            </p>
+            <div class="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row">
+                <a href="mailto:christoferbertonha@gmail.com" class="flex items-center gap-2 text-xl font-medium text-green-300 transition-colors hover:text-cyan-400">
+                    <!-- Mail SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+_
+                    christoferbertonha@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/christofer-bertonha" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xl font-medium text-green-300 transition-colors hover:text-cyan-400">
+                    <!-- LinkedIn SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width_4 height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+_
+                    LinkedIn
+                </a>
+                <a href="https://github.com/bertonha" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-xl font-medium text-green-300 transition-colors hover:text-cyan-400">
+                    <!-- GitHub SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+_
+                    GitHub
+                </a>
+            </div>
+            <p class="mt-10 text-green-700">&copy; 2025 Christofer Bertonha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling, active nav link highlighting, and animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Smooth Scrolling ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Active Nav Link Highlighting (Scrollspy) ---
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4 // 40% of the section must be visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
